@@ -116,7 +116,7 @@ ros2 launch depth_anything_v3 depth_anything_v3.launch.py \
 
 ## Model Preparation
 
-1. **Obtain the model**: Export the Depth Anything V3 ONNX file (or convert it to a TensorRT engine) that matches your hardware and accuracy requirements
+1. **Obtain the model**: Download the ONNX file from Huggingface: [https://huggingface.co/TillBeemelmanns/Depth-Anything-V3-ONNX](https://huggingface.co/TillBeemelmanns/Depth-Anything-V3-ONNX)
 2. **Place model file**: Put the ONNX/engine file in the `models/` directory
 3. **Update configuration**: Modify `config/depth_anything_v3.param.yaml` with the correct model path
 
@@ -156,7 +156,11 @@ We recommend to use the docker image in combination with our other tools for Doc
 ```bash
 # From your ROS 2 workspace
 colcon build --packages-select depth_anything_v3 --cmake-args -DCMAKE_BUILD_TYPE=Release
+
 source install/setup.bash
+
+# Optional: Pre-build TensorRT engines
+./generate_engines.sh
 ```
 
 ## Performance
