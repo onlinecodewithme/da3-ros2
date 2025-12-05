@@ -1,16 +1,13 @@
 # Depth Anything V3 TensorRT ROS 2 Node
 
 
-
-
 https://github.com/user-attachments/assets/d119d3b8-bba1-43a3-9f86-75db24e01235
 
 
-
 A ROS 2 node for Depth Anything V3 depth estimation using TensorRT for real-time inference. This node subscribes to camera image and camera info topics and publishes directly both, a metric depth image and `PointCloud2` point cloud.
+
 <!-- omit from toc -->
 ## Overview
-
 - [Features](#features)
 - [Dependencies](#dependencies)
 - [Topics](#topics)
@@ -245,7 +242,7 @@ The model outputs a separate sky classification tensor:
 For each pixel in the depth map:
 ```
 X = (u - cx) * depth / fx
-Y = (v - cy) * depth / fy  
+Y = (v - cy) * depth / fy
 Z = depth
 ```
 Where `(cx, cy)` is the principal point and `(fx, fy)` are the focal lengths from `CameraInfo`.
